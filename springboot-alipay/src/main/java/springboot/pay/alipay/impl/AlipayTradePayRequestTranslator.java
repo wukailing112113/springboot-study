@@ -31,7 +31,7 @@ public class AlipayTradePayRequestTranslator implements Translator<AlipayRequest
     @Override
     public AlipayRequest translate(Map<String, String> requestParams) {
         Channel cn = getChannel(Byte.valueOf(String.valueOf(requestParams.get("channel"))));
-        AlipayRequest alipayRequest = bindCommonField(null, requestParams);
+        AlipayRequest alipayRequest = bindCommonField(cn, requestParams);
         return injectBizContent(requestParams, cn, alipayRequest);
     }
 
@@ -49,8 +49,8 @@ public class AlipayTradePayRequestTranslator implements Translator<AlipayRequest
 
     private String bizContent(final Map<String, String> requestParams, final Channel cn) {
         return new JSONObject() {{
-            put("out_trade_no", requestParams.get("payno"));
-            put("total_amount", requestParams.get("totalPrice"));
+            put("out_trade_no", requestParams.get("out_trade_no"));
+            put("total_amount", requestParams.get("total_amount"));
             put("subject", requestParams.get("subject"));
             put("seller_id", Config.partner);
             put("product_code", ((cn == PC || cn == WAP) ? "QUICK_WAP_PAY" : "QUICK_MSECURITY_PAY"));

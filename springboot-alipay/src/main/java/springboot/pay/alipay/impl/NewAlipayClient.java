@@ -17,6 +17,8 @@ import springboot.pay.alipay.http.IHttpClient;
 import java.util.Map;
 
 import static org.apache.commons.lang.StringUtils.EMPTY;
+import static springboot.pay.alipay.impl.Channel.PC;
+import static springboot.pay.alipay.impl.Channel.WAP;
 import static springboot.pay.alipay.impl.Channel.getChannel;
 
 
@@ -47,7 +49,7 @@ public class NewAlipayClient implements IPayClient {
         try {
             Channel channel = getChannel(Byte.valueOf(String.valueOf(requestParams.get("channel"))));
             AlipayRequest alipayTradePayRequest = new AlipayTradePayRequestTranslator().translate(requestParams);
-            if (true) {
+            if (channel == PC || channel == WAP) {
                 return alipayClient.pageExecute((AlipayTradeWapPayRequest)alipayTradePayRequest).getBody();
             } else {
                 return alipayClient.sdkExecute((AlipayTradeAppPayRequest)alipayTradePayRequest).getBody();

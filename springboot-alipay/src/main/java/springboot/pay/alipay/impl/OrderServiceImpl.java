@@ -10,6 +10,7 @@ import springboot.pay.alipay.IPayClient;
 import springboot.pay.alipay.http.IHttpClient;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,8 +57,9 @@ public class OrderServiceImpl implements IOrderService,InitializingBean {
         vo.getParms().put("paymentSuccessJumpToURL", "/pages/busi/success-pay.html");
         vo.getParms().put("returnUrl", "/pages/busi/success-pay.html");
         vo.getParms().put("showUrl", "/pages/busi/success-pay.html");
-        vo.getParms().put("out_trade_no", "iba20180110150218889");
+        vo.getParms().put("out_trade_no", "iba20180"+String.valueOf(new Date().getTime()));
         vo.getParms().put("total_amount", "0.01");
         vo.getParms().put("subject", "测试商品");
+        vo.getParms().put("channel","5");
     }
 }
