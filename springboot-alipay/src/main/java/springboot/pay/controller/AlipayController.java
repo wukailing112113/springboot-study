@@ -13,6 +13,7 @@ import springboot.pay.alipay.impl.PayVo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Map;
 
 import static com.alipay.api.AlipayConstants.CHARSET;
@@ -64,10 +65,21 @@ public class AlipayController {
         model.put("payType",0);
         return "pay";
     }
-    @RequestMapping("/welcome")
+    @RequestMapping(value = "/welcome",method = RequestMethod.GET)
     public String welcome(Map<String, Object> model) {
         model.put("message", "kling:-w");
         return "welcome";
+    }
+
+    @RequestMapping(value = "/call-back",method = RequestMethod.POST)
+    public void callbackUrl(HttpServletRequest request,HttpServletResponse response) {
+        System.out.println(request.getParameterMap());
+        System.out.println("支付宝回调地址！！！");
+        try {
+            response.getWriter().write("success");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

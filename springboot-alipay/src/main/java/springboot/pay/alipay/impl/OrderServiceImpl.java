@@ -62,9 +62,9 @@ public class OrderServiceImpl implements IOrderService,InitializingBean {
     }
 
     private void resolvePayVoParams(PayVo vo){
-        vo.getParms().put("notifyUrl", "");
-        vo.getParms().put("paymentSuccessJumpToURL", "/pages/busi/success-pay.html");
-        vo.getParms().put("returnUrl", "/pages/busi/success-pay.html");
+        vo.getParms().put("host", "http://kling.ngrok.ibaboss.com");
+        vo.getParms().put("paymentSuccessJumpToURL", "");
+        vo.getParms().put("returnUrl", "");
         vo.getParms().put("showUrl", "/pages/busi/success-pay.html");
         vo.getParms().put("out_trade_no", "iba20180"+String.valueOf(System.currentTimeMillis()));
         vo.getParms().put("total_amount", "0.01");
