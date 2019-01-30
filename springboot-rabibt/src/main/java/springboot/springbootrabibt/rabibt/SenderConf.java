@@ -114,4 +114,5 @@ public class SenderConf {
         return BindingBuilder.bind(fanoutCQueue).to(fanoutExchange);
     }
 
+
 }
