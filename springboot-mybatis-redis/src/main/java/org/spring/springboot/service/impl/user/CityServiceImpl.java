@@ -2,16 +2,14 @@ package org.spring.springboot.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.spring.springboot.dao.CityDao;
-import org.spring.springboot.domain.City;
-import org.spring.springboot.service.CityService;
+import org.spring.springboot.dao.user.CityDao;
+import org.spring.springboot.enty.user.City;
+import org.spring.springboot.service.intl.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**

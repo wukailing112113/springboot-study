@@ -1,8 +1,6 @@
-package org.spring.springboot.service;
+package org.spring.springboot.service.intl;
 
-import org.spring.springboot.domain.City;
-
-import java.util.List;
+import org.spring.springboot.enty.user.City;
 
 /**
  * 城市业务逻辑接口类
