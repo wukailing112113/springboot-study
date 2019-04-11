@@ -1,13 +1,10 @@
 package org.spring.springboot.controller;
 
 import org.json.JSONObject;
-import org.spring.springboot.domain.City;
-import org.spring.springboot.service.CityService;
+import org.spring.springboot.entity.user.City;
+import org.spring.springboot.service.intf.user.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Created by bysocket on 07/02/2017.
@@ -57,6 +54,7 @@ public class CityRestController {
     @RequestMapping(value = "/api/addcity", method = RequestMethod.POST)
     public String addCity(@RequestBody City city) throws Exception{
         System.out.println(city.getCityName());
+        cityService.saveCity(city);
         return  new JSONObject(){{put("isok","yes");}}.toString();
     }
 }

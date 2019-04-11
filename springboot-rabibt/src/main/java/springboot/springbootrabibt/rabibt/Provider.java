@@ -16,7 +16,7 @@ public class Provider {
     private AmqpTemplate template;
 
     public void send(){
-        // 一对一发送消息.第一个参数消息队列的名称，现在是配置在mq控制台http://localhost:15672;第二个参数是消息对应的值
+        // 一对一发送消息.第一个参数消息队列的名称，;第二个参数是消息对应的值
         template.convertAndSend("hello","hello,rabbit~");
         template.convertAndSend("user","hello,user~");
 

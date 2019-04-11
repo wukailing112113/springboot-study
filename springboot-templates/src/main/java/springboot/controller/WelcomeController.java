@@ -18,4 +18,10 @@ public class WelcomeController {
         model.put("message", this.message);
         return "welcome";
     }
+
+    public static void main(String[] args) {
+        String a = "4";
+        String[] split = a.split(",");
+        System.out.println(split.length);
+    }
 }

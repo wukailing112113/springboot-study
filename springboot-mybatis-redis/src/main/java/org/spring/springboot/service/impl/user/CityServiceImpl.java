@@ -1,10 +1,10 @@
-package org.spring.springboot.service.impl;
+package org.spring.springboot.service.impl.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.spring.springboot.dao.user.CityDao;
-import org.spring.springboot.enty.user.City;
-import org.spring.springboot.service.intl.CityService;
+import org.spring.springboot.dao.intf.prod.CityDao;
+import org.spring.springboot.entity.user.City;
+import org.spring.springboot.service.intf.user.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;

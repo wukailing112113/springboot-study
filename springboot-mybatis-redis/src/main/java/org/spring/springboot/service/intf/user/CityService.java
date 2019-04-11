@@ -1,6 +1,6 @@
-package org.spring.springboot.service.intl;
+package org.spring.springboot.service.intf.user;
 
-import org.spring.springboot.enty.user.City;
+import org.spring.springboot.entity.user.City;
 
 /**
  * 城市业务逻辑接口类
