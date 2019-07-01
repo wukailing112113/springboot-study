@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 
 import org.apache.commons.lang.StringUtils;
 import org.codehaus.groovy.util.StringUtil;
-import springboot.pay.alipay.impl.Channel;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +41,7 @@ public class HttpHelper {
         if (Objects.isNull(reqHead.getChannel())) { // 从HttpHeader里面获取
             tmpStr = request.getHeader(ReqHeader.CHANNEL);
             if (StringUtils.isEmpty(tmpStr)) {
-                reqHead.setChannel(Channel.PC.getCode());
+                reqHead.setChannel(Byte.parseByte(tmpStr));
             } else {
                 reqHead.setChannel(Byte.parseByte(tmpStr));
             }

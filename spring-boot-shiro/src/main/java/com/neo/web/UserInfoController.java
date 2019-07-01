@@ -3,6 +3,7 @@ package com.neo.web;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/userInfo")
@@ -22,8 +23,8 @@ public class UserInfoController {
      * 用户添加;
      * @return
      */
-    @RequestMapping("/userAdd")
-    @RequiresPermissions("userInfo:add")//权限管理;
+    @RequestMapping(value = "/userAdd",method = RequestMethod.GET)
+    //@RequiresPermissions("userInfo:add")//权限管理;
     public String userInfoAdd(){
         return "userInfoAdd";
     }
