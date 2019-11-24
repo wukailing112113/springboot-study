@@ -15,4 +15,13 @@ public class HelloWorldController {
     public String sayHello() {
         return "Hello,World!";
     }
+
+
+    public static void main(String[] args) {
+        String a = "/1/1.jpg";
+        String[] split = a.split("/");
+        for(int i=0;i<split.length;i++){
+            System.out.println(i+"--"+split[i]);
+        }
+    }
 }
