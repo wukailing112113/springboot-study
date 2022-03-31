@@ -54,7 +54,7 @@
 				<!--</exclusion>-->
 			<!--</exclusions>-->
 
-			<version>1.5.9.RELEASE</version>
+			<version>2.5.12</version>
 		</dependency>
 
 		<dependency>
